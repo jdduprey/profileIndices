@@ -91,8 +91,6 @@ def profileIndexer(ds,pressureVariable,profileIndex,threshold):
     diffArray = np.diff(ds[pressureVariable])
     diffArray_times = ds.time[1:]
     diffArray_pressure = ds[pressureVariable][1:]
-    
-    print(diffArray)
 
     diffArray_cast = diffArray[np.where(abs(diffArray) > threshold)]
     diffArray_cast_times = diffArray_times[np.where(abs(diffArray) > threshold)]
