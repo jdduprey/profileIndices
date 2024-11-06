@@ -2,3 +2,6 @@ profiler,indexFile,pressureVariable,zarrFile,gc_thredds_dir
 CE04OSPS,CE04OSPS_profiles.csv,sea_water_pressure,ooi-data/CE04OSPS-SF01B-2A-CTDPFA107-streamed-ctdpf_sbe43_sample,nothingYet
 RS01SBPS,RS01SBPS_profiles.csv,sea_water_pressure,ooi-data/RS01SBPS-SF01A-2A-CTDPFA102-streamed-ctdpf_sbe43_sample,nothingYet
 RS03AXPS,RS03AXPS_profiles.csv,sea_water_pressure,ooi-data/RS03AXPS-SF03A-2A-CTDPFA302-streamed-ctdpf_sbe43_sample,nothingYet
+CE04OSPD,CE04OSPD_profiles.csv,sea_water_pressure,ooi-data/CE04OSPD-DP01B-01-CTDPFL105-recovered_inst-dpc_ctd_instrument_recovered,nothingYet
+RS01SBPD,RS01SBPD_profiles.csv,sea_water_pressure,ooi-data/RS01SBPD-DP01A-01-CTDPFL104-recovered_inst-dpc_ctd_instrument_recovered,nothingYet
+RS03AXPD,RS03AXPD_profiles.csv,sea_water_pressure,ooi-data/RS03AXPD-DP03A-01-CTDPFL304-recovered_inst-dpc_ctd_instrument_recovered,nothingYet

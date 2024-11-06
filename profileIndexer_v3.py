@@ -220,31 +220,26 @@ def main():
 
 
         if profileList:
+            profile_dataframe = pd.DataFrame(profileList, columns=['profile','start','peak','end'])
+            profile_dataframe['start'] = pd.to_datetime(profile_dataframe['start'])
+            profileYears = set(profile_dataframe['start'].dt.year)
             if 'test' in args.fileCreation:
-                csv_columns = ['profile', 'start', 'peak', 'end']
-                with open(indexFile, 'w') as csvfile:
-                    write = csv.writer(csvfile) 
-                    write.writerow(csv_columns) 
-                    write.writerows(profileList)
-            else:
-                profile_dataframe = pd.DataFrame(profileList, columns=['profile','start','peak','end'])
-                profile_dataframe['start'] = pd.to_datetime(profile_dataframe['start'])
-                profileYears = set(profile_dataframe['start'].dt.year)
-                if 'append' in args.fileCreation:
-                    currentFileYear = int(re.search("([0-9]{4})", currentFile).group(1))
-                    for subYear in profileYears:
-                        profiles_sub = profile_dataframe[profile_dataframe['start'].dt.year == subYear]
-                        profiles_sub_list = profiles_sub.values.tolist()
-                        if subYear == currentFileYear:
-                            with open(currentFile, 'a') as csvfile:
-                                write = csv.writer(csvfile)
-                                write.writerows(profiles_sub_list)
-                        else:
-                            profiles_sub.to_csv('{}_profiles_{}.csv'.format(args.profiler,str(subYear)), index=False)
-                if 'create' in args.fileCreation:
-                    for subYear in profileYears:
-                        profiles_sub = profileList[profileList['start'].dt.year == subYear]
+                profile_dataframe.to_csv('{}_profiles_{}.csv'.format(args.profiler,'test'), index=False)
+            elif 'append' in args.fileCreation:
+                currentFileYear = int(re.search("([0-9]{4})", currentFile).group(1))
+                for subYear in profileYears:
+                    profiles_sub = profile_dataframe[profile_dataframe['start'].dt.year == subYear]
+                    profiles_sub_list = profiles_sub.values.tolist()
+                    if subYear == currentFileYear:
+                        with open(currentFile, 'a') as csvfile:
+                            write = csv.writer(csvfile)
+                            write.writerows(profiles_sub_list)
+                    else:
                         profiles_sub.to_csv('{}_profiles_{}.csv'.format(args.profiler,str(subYear)), index=False)
+            elif 'create' in args.fileCreation:
+                for subYear in profileYears:
+                    profiles_sub = profile_dataframe[profile_dataframe['start'].dt.year == subYear]
+                    profiles_sub.to_csv('{}_profiles_{}.csv'.format(args.profiler,str(subYear)), index=False)
         else:
             logger.info('no profiles detected')
 
