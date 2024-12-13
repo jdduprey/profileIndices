@@ -209,12 +209,16 @@ def main():
             logger.info('profile indexing completed, time elapse: {}', end - now)
 
         elif 'PD' in args.profiler:
+            if 'CE04' in args.profiler:
+                threshold = 1
+            else:
+                threshold = 2
             logger.info('processing deep profiler dataset')
             ds_resampled = data_resample(ds, "10s")
             ds_cleaned = ds_resampled.dropna(dim="time", how="any")
             logger.info('determining profile indices')
             now = datetime.utcnow()
-            profileList = profileIndexer(ds_cleaned,profilerDict['pressureVariable'],profileIndex,2)
+            profileList = profileIndexer(ds_cleaned,profilerDict['pressureVariable'],profileIndex,threshold)
             end = datetime.utcnow()
             logger.info('profile indexing completed, time elapse: {}', end - now)
 
