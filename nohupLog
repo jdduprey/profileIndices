@@ -112,3 +112,25 @@
 2024-12-14 09:47:39.413 | INFO     | __main__:profileIndexer:113 - iteration: 10400
 2024-12-14 09:51:38.804 | INFO     | __main__:profileIndexer:113 - iteration: 10500
 2024-12-14 09:53:13.853 | INFO     | __main__:main:223 - profile indexing completed, time elapse: 13:42:00.340326
+[main a442b59] auto-commit for new version of updated CE04OSPD profile indices
+ 15 files changed, 5384 insertions(+), 5161 deletions(-)
+ rewrite CE04OSPD_profiles_2018.csv (98%)
+ rewrite CE04OSPD_profiles_2019.csv (99%)
+ rewrite CE04OSPD_profiles_2021.csv (98%)
+ rewrite CE04OSPD_profiles_2022.csv (96%)
+ rewrite CE04OSPD_profiles_2023.csv (98%)
+ rewrite CE04OSPD_profiles_2024.csv (97%)
+ create mode 100644 nohupLog
+ create mode 100644 old/CE04OSPD_profiles_2015.csv
+ copy CE04OSPD_profiles_2018.csv => old/CE04OSPD_profiles_2018.csv (100%)
+ copy CE04OSPD_profiles_2019.csv => old/CE04OSPD_profiles_2019.csv (100%)
+ copy CE04OSPD_profiles_2021.csv => old/CE04OSPD_profiles_2021.csv (100%)
+ copy CE04OSPD_profiles_2022.csv => old/CE04OSPD_profiles_2022.csv (100%)
+ copy CE04OSPD_profiles_2023.csv => old/CE04OSPD_profiles_2023.csv (100%)
+ copy CE04OSPD_profiles_2024.csv => old/CE04OSPD_profiles_2024.csv (100%)
+Using GPG to open /home/datateam/gitKey.gpg: [gpg --decrypt /home/datateam/gitKey.gpg]
+gpg: Note: secret key 0D0E2991F5315F1C expired at Sat 06 Apr 2024 05:46:12 PM UTC
+gpg: encrypted with 3072-bit RSA key, ID 0D0E2991F5315F1C, created 2022-04-07
+      "wruef <wruef@uw.edu>"
+To https://github.com/OOI-CabledArray/profileIndices.git
+   7e5e6ba..a442b59  main -> main
