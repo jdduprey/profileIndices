@@ -23,6 +23,7 @@ dependencies = [
   "xarray>=2024.11.0",
   "s3fs>2024.6.0",
   "loguru",
+  "zarr",
 ]
 
 [project.scripts]

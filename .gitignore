@@ -3,3 +3,4 @@
 *.sh
 
 .ruff_cache
+__pycache__
